@@ -23,6 +23,13 @@ export class CamaraescanersalidaPage implements OnInit {
 
   nombre: string;
 
+  name: any;
+  role: string;
+  email: string;
+  telefono: any;
+  documento: any;
+  coincidencia: any;
+
   //? Matriz que contendra uan referencia a cada foto.
   public photos: UserPhoto[] = [];
 
@@ -68,7 +75,7 @@ export class CamaraescanersalidaPage implements OnInit {
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
       //?resolucion de la foto
-      quality: 50
+      quality: 100
     });
 
     //? Guarda la imagen y la agrega a la colección de fotos.
@@ -101,8 +108,18 @@ export class CamaraescanersalidaPage implements OnInit {
 
     const token = localStorage.getItem('token');
 
-    this.foto.enviarfototempsal(token, base64).subscribe((res: any) => {
+    this.foto.enviarfototemp(token, base64).subscribe((res: any) => {
       console.log(res);
+
+      this.name = res.dataUser.name;
+      this.documento = res.dataUser.documento;
+      this.telefono = res.dataUser.telefono;
+      this.email = res.dataUser.email;
+      this.role = res.dataUser.role[0];
+      this.coincidencia = res.datosazure[0].candidates[0].confidence;
+
+      //this.datosUser = res.datosUser;
+      //this.datosazure = res.datosazure;
     });
 
     //? Use webPath para mostrar la nueva imagen en lugar de base64, ya que ya está cargada en la memoria.

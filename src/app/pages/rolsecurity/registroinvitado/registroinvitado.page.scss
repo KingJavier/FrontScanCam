@@ -12,10 +12,10 @@
     height: 8vh;
     filter: drop-shadow(3px 4px 4px #444);
 }
-.lacard{
-    border-radius: 1rem;
+.elboton{
     filter: drop-shadow(3px 3px 3px #444);
     margin-top: 250px;
+    border-radius: 1rem;
 }
 
 .lacardone{
@@ -23,3 +23,11 @@
     filter: drop-shadow(3px 3px 3px #444);
     margin-top: 50px;
 }
+
+@media screen and (max-width:719px){
+  .elboton{
+      margin-top: 12px;
+  }
+}
+
+

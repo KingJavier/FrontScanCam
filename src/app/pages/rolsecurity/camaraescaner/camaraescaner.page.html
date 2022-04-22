@@ -20,56 +20,61 @@
 </ion-toolbar>
 
 <ion-content class="fondo">
-
-  <ion-row>
-    <ion-col size="1"> </ion-col>
-    <ion-col size="12"></ion-col>
-     <ion-card class="lacard">
-      <ion-card-content>
-        <img src="../../../assets/Imagenes/person.jpg">
-
-        <ion-item class="ion-margin-vertical">
-          <ion-label position="floating">Nombre:</ion-label>
-          <ion-input type="text" placeholder="Nombre" ></ion-input>
-        </ion-item>
-
-        <ion-item class="ion-margin-vertical">
-          <ion-label position="floating">Documento:</ion-label>
-          <ion-input type="text" placeholder="Documento" ></ion-input>
-        </ion-item>
-
-        <ion-item class="ion-margin-vertical">
-          <ion-label position="floating">Ficha:</ion-label>
-          <ion-input type="text" placeholder="Ficha" ></ion-input>
-        </ion-item>
-
-        <ion-item class="ion-margin-vertical">
-          <ion-label position="floating">Teléfono:</ion-label>
-          <ion-input type="text" placeholder="Telefono" ></ion-input>
-        </ion-item>
-
-        <ion-item class="ion-margin-vertical">
-          <ion-label position="floating">Rol:</ion-label>
-          <ion-input type="text" placeholder="Rol" ></ion-input>
-        </ion-item>
-      </ion-card-content>
-    </ion-card>
-    <!-- ORganiza la foto tomada en la pag -->
-    <ion-grid>
-      <ion-row>
-        <ion-col size="12" *ngFor="let photo of photos; index as position">
-          <ion-img [src]="photo.webviewPath"></ion-img>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+  <ion-row class="ion-text-center">
+    <ion-col size="5"></ion-col>
+    <ion-col size="12" size-sm="2">
+      <ion-card class="lacard">
+        <button (click)="addPhotoToGallery()">
+          <ion-icon id="icono" name="camera" class="elicono"></ion-icon>
+        </button>
+      </ion-card>
+    </ion-col>
+    <ion-col size="9"> </ion-col>
   </ion-row>
 
-  <!-- Depliega el metodo de tomar una fotografia. -->
-  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-    <ion-fab-button (click)="addPhotoToGallery()">
-      <ion-icon name="camera"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+  <ion-row>
 
+    <ion-col size="12" size-md="3">
+      <ion-card class="lacard">
+        <ion-card-content>
+
+          <ion-item class="ion-margin-vertical" >
+            <h4>Nombre: {{this.name}}</h4>
+          </ion-item>
+
+          <ion-item class="ion-margin-vertical">
+            <h4>Documento: {{this.documento}}</h4>
+          </ion-item>
+
+          <ion-item class="ion-margin-vertical">
+            <h4>Correo: {{this.email}}</h4>
+          </ion-item>
+
+          <ion-item class="ion-margin-vertical">
+            <h4>Teléfono: {{this.telefono}}</h4>
+          </ion-item>
+
+          <ion-item class="ion-margin-vertical">
+            <h4>Rol: {{this.role}}</h4>
+          </ion-item>
+
+          <ion-item class="ion-margin-vertical">
+            <h4>Coincidencia: {{this.coincidencia}}</h4>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+    <ion-col size="12" size-md="8">
+      <!-- ORganiza la foto tomada en la pag -->
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12" *ngFor="let photo of photos; index as position">
+            <ion-img class="imagen" [src]="photo.webviewPath"></ion-img>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-col>
+  </ion-row>
 
 </ion-content>

@@ -14,7 +14,8 @@ import { ToastController } from '@ionic/angular';
   templateUrl: './registroinvitado.page.html',
   styleUrls: ['./registroinvitado.page.scss'],
 })
-export class RegistroinvitadoPage implements OnInit {
+export class RegistroinvitadoPage implements OnInit{
+
   //llamdo de los datos url y name como dato tipo string
   url: string;
 
@@ -33,6 +34,8 @@ export class RegistroinvitadoPage implements OnInit {
     estado: true,
   };
 
+  form: FormGroup;
+
   constructor(
     //se inyeta la imortación de taskservice
     private taskService: TaskService,
@@ -40,11 +43,8 @@ export class RegistroinvitadoPage implements OnInit {
     private router: Router,
     // se inyecta la importación del contructor de formularios de angular
     private builder: FormBuilder,
-    public toastController: ToastController,
-    //inyevta los servicios de la api
-    private usuarioServicio: TaskService
+    public toastController: ToastController
   ) {
-    //llamdo del nombre del localstorage
     this.nombre=localStorage.getItem('name');
   }
 
@@ -54,8 +54,21 @@ export class RegistroinvitadoPage implements OnInit {
     this.router.navigate(['login']);
   }
 
+  traerfotol(){
+    //función de tarer la foto de los servicios de la api
+    const token = localStorage.getItem('token');
+    const idImgPerfil = localStorage.getItem('idImgPerfil');
+
+    console.log('Token -->',token);
+    console.log('imgPer -->',idImgPerfil);
+
+    this.taskService.traerfotoperfil(token, idImgPerfil).subscribe((res: any)=>{
+      console.log(res.data.url);
+      this.url = res.data.url;
+    });
+  }
+
   async errorr() {
-    //alerta de errores
     const toast = await this.toastController.create({
       message: 'Llena todos los campos o valida si el correo ya esta registrado ',
       color: 'danger',
@@ -64,12 +77,8 @@ export class RegistroinvitadoPage implements OnInit {
     toast.present();
   }
 
-  // eslint-disable-next-line @typescript-eslint/member-ordering
-  form: FormGroup;
-//se llaman los campos para validarlos y sean requerdos
+  //se llaman los campos para validarlos y sean requerdos
   ngOnInit() {
-    //llamdo de la foto
-    this.traerfotol();
     this.form = this.builder.group({
       doc: [null, Validators.required],
       name: [null, Validators.required],
@@ -107,7 +116,6 @@ export class RegistroinvitadoPage implements OnInit {
         //se crea el usuario con el llamado a create task y lo retorna a verificación de email
     this.taskService.createsTask(task).subscribe((res: any) => {
       console.log(res);
-        this.router.navigate(['/verificacion-email']);
     },error => {
       this.errorr();
     });
@@ -117,19 +125,5 @@ export class RegistroinvitadoPage implements OnInit {
     console.log('Error->', error);
   }
 }
-
-traerfotol(){
-    //función de tarer la foto de los servicios de la api
-    const token = localStorage.getItem('token');
-    const idImgPerfil = localStorage.getItem('idImgPerfil');
-
-    console.log('Token -->',token);
-    console.log('imgPer -->',idImgPerfil);
-
-    this.usuarioServicio.traerfotoperfil(token, idImgPerfil).subscribe((res: any)=>{
-      console.log(res.data.url);
-      this.url = res.data.url;
-    });
-  }
 
 }
