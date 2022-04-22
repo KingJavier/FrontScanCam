@@ -1,0 +1,46 @@
+<ion-menu side="start" menuId="first" contentId="principal">
+  <ion-header>
+    <ion-toolbar color="light">
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+
+    <ion-list *ngIf="this.role==='aprendiz' ">
+      <ion-item routerLink="/inicioapre"><ion-icon name="home-outline"></ion-icon>Inicio</ion-item>
+      <ion-item routerLink="/perfilaprendiz"><ion-icon name="person-outline"></ion-icon>Perfil</ion-item>
+      <ion-item routerLink="/entrenmaquiaprendiz"><ion-icon name="camera"></ion-icon>Entrenamien</ion-item>
+    </ion-list>
+
+    <ion-list *ngIf="this.role==='invitado' ">
+      <ion-item routerLink="/inicioinv"><ion-icon name="home-outline"></ion-icon>Inicio</ion-item>
+      <ion-item routerLink="/perfilinvitado"><ion-icon name="person-outline"></ion-icon>Perfil</ion-item>
+      <ion-item routerLink="/entrenmaquiinvitado"><ion-icon name="camera"></ion-icon>Entrenamien</ion-item>
+    </ion-list>
+
+    <ion-list *ngIf="this.role==='funcionario' ">
+      <ion-item routerLink="/iniciofun"><ion-icon name="home-outline"></ion-icon>Inicio</ion-item>
+      <ion-item routerLink="/perfilfuncionario"><ion-icon name="person-outline"></ion-icon>Perfil</ion-item>
+      <ion-item routerLink="/entrenmaquifuncionario"><ion-icon name="camera"></ion-icon>Entrenamien</ion-item>
+    </ion-list>
+
+    <ion-list *ngIf="this.role==='gestor' ">
+      <ion-item routerLink="/inicioges"><ion-icon name="home-outline"></ion-icon>Inicio</ion-item>
+      <ion-item routerLink="/perfilgestor"><ion-icon name="person-outline"></ion-icon>Perfil</ion-item>
+      <ion-item routerLink="/entrenmaquina"><ion-icon name="camera"></ion-icon>Entrenamien</ion-item>
+      <ion-item routerLink="/listado"><ion-icon name="documents-outline"></ion-icon>Base de Datos</ion-item>
+      <ion-item routerLink="/estadisticas"><ion-icon name="bar-chart-outline"></ion-icon>Estadisticas</ion-item>
+    </ion-list>
+
+    <ion-list *ngIf="this.role==='seguridad' ">
+      <ion-item routerLink="/rolseguridad"><ion-icon name="home-outline"></ion-icon>Inicio</ion-item>
+      <ion-item routerLink="/perfilseguridad"><ion-icon name="person-outline"></ion-icon>Perfil</ion-item>
+      <ion-item routerLink="/entrenarmaquina"><ion-icon name="camera"></ion-icon>Entrenamien</ion-item>
+      <ion-item routerLink="/escanearqr"><ion-icon name="qr-code-outline"></ion-icon>Escanear QR</ion-item>
+      <ion-item routerLink="/registroinvitado"><ion-icon name="person-add-outline"></ion-icon>Registrar Invitado</ion-item>
+      <ion-item routerLink="/listadoseguridad"><ion-icon name="documents-outline"></ion-icon>Listado de Ingresos</ion-item>
+      <ion-item routerLink="/camaraescaner"><ion-icon name="camera-reverse-outline"></ion-icon>Reconocimiento Entrada</ion-item>
+      <ion-item routerLink="/camaraescanersalida"><ion-icon name="camera-reverse-outline"></ion-icon>Reconocimiento Salida</ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-menu>

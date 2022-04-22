@@ -1,0 +1,63 @@
+<ion-toolbar color="light">
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="/home"></ion-back-button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-content class="fondo">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="1">
+      </ion-col>
+      <ion-col size-md="5" size="0">
+
+        <img src="../../../assets/Imagenes/logo.png" style="height: 520px;width: 520px;" class="ion-text-center">
+
+      </ion-col>
+      <ion-col size-md="5">
+        <ion-card class="card">
+          <ion-text color="primary" >
+            <h1 class="titulos">LOGIN</h1>
+          </ion-text>
+          <ion-card-content class="ion-padding">
+            <form [formGroup]="form" errorTailor>
+              <ion-item class="form-group">
+                <ion-label position="floating">Correo</ion-label>
+                <ion-input class="form-control" formControlName="correo" placeholder="Correo" type="text" [(ngModel)]="datos.email" name="email" errorTailor></ion-input>
+              </ion-item>
+
+              <ion-item class="form-group">
+                <ion-label position="floating">Contraseña</ion-label>
+                <ion-input class="form-control" formControlName="contraseña" placeholder="Contraseña" type="password" [(ngModel)]="datos.password" name="password" ></ion-input>
+              </ion-item>
+
+              <ion-row>
+                <ion-col>
+                  <p class="ion-text-end">
+                    <a [routerLink]="['/forgot-password']">¿Olvidaste tu contraseña?</a>
+                  </p>
+                </ion-col>
+              </ion-row>
+
+              <div class="ion-text-center">
+                <ion-button color="primary" class="ion-margin-top" (click)="createLogeo()">
+                  INGRESAR
+                </ion-button>
+              </div>
+
+              <ion-row class="eltexto">
+                <ion-col size="12">
+                  <ion-text color="dark" >
+                    <h5>¿No tienes cuenta?  <a  [routerLink]="['/register']">REGISTRARSE</a> o <a  [routerLink]="['/qr']">GENERAR QR</a></h5>
+                  </ion-text>
+                </ion-col>
+              </ion-row>
+            </form>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="1">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

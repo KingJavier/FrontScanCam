@@ -1,0 +1,30 @@
+.salida{
+    font-size: 40px;
+    background-color: transparent;
+}
+.elicono{
+    font-size: 130px;
+}
+.lafoto{
+    max-width: 125px;
+    height: 125px;
+    padding: .5em;
+    height: 8vh;
+    filter: drop-shadow(3px 4px 4px #444);
+}
+.lacard{
+    border-radius: 1rem;
+    filter: drop-shadow(3px 3px 3px #444);
+    margin-top: 150px;
+}
+
+.centrar{
+    display:flex;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+}
+.chart-container{
+    position: relative;
+    margin: auto;
+}

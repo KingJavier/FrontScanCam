@@ -1,0 +1,55 @@
+<ion-toolbar color="light">
+  <ion-row>
+    <ion-col size="2">
+      <ion-buttons>
+        <ion-menu-button color="dark" menu="first"></ion-menu-button>
+        <ion-button routerLink="/perfilgestor" expand="block" fill="clear" shape="round" color="dark">
+          <h5>{{this.nombre}}</h5>
+        </ion-button>
+        <img [src]="this.url" class="lafoto">
+      </ion-buttons>
+    </ion-col>
+    <ion-col size="9">
+    </ion-col>
+    <ion-col size="1">
+      <button class="salida" (click)="salir()">
+        <ion-icon name="log-out-outline" color="dark"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-toolbar>
+
+<ion-content class="fondo">
+<div style="margin: 30px;">
+  <table class="table" size="12">
+    <thead>
+      <tr>
+        <th scope="col">Nombre </th>
+        <th scope="col">Rol</th>
+        <th scope="col">Activo</th>
+        <th scope="col">Inactivo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of usuarios">
+      <td>{{usuario.name}}</td>
+      <td>
+        <ion-select #p (ionChange)="cambiarrole(p.value, usuario._id)" [value]="usuario.role[0]" class="form-control" name="role" >
+          <ion-select-option Value="invitado">Invitado</ion-select-option>
+          <ion-select-option Value="aprendiz">Aprendiz</ion-select-option>
+          <ion-select-option Value="funcionario">Funcionario</ion-select-option>
+          <ion-select-option Value="gestor">Gestor</ion-select-option>
+          <ion-select-option Value="seguridad">Seguridad</ion-select-option>
+        </ion-select>
+      </td>
+      <td class="activo">
+        <ion-checkbox (ionChange)="deshabilitar(usuario._id)" color="primary" *ngIf="usuario.estado==='ACTIVO' " checked="true"></ion-checkbox>
+      </td>
+      <td class="activo">
+        <ion-checkbox (ionChange)="activar(usuario._id)" color="primary" *ngIf="usuario.estado==='DESHABILITADO' " checked="true" ></ion-checkbox>
+      </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "scancam",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

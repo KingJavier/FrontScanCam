@@ -1,0 +1,38 @@
+<ion-toolbar color="light">
+  <ion-row>
+    <ion-col size="2">
+      <ion-buttons>
+        <ion-menu-button color="dark" menu="first"></ion-menu-button>
+          <ion-button routerLink="/perfilgestor" expand="block" fill="clear" shape="round" color="dark">
+          <h5>{{this.nombre}}</h5>
+        </ion-button>
+        <img [src]="this.url" class="lafoto">
+      </ion-buttons>
+    </ion-col>
+    <ion-col size="9">
+    </ion-col>
+    <ion-col size="1">
+      <button class="salida" (click)="salir()">
+        <ion-icon name="log-out-outline" color="dark"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-toolbar>
+
+<ion-content class="fondo">
+  <!-- Depliega el metodo de tomar una fotografia. -->
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="addPhotoToGallery()">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <!-- ORganiza la foto tomada en la pag -->
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" *ngFor="let photo of photos; index as position">
+        <ion-img [src]="photo.webviewPath"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

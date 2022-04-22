@@ -1,0 +1,44 @@
+
+<ion-toolbar color="light">
+  <ion-title>Certificado</ion-title>
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="/login"></ion-back-button>
+  </ion-buttons>
+</ion-toolbar>
+
+
+  <ion-content class="fondo">
+    <ion-grid>
+      <ion-row>
+        <ion-col sizeMd="4" offsetMd="4">
+            <ion-card class="lacard">
+                <ion-card-content >
+                  <ion-text color="primary" class="titulos">
+                    <h1>CERTIFICADO</h1>
+                    </ion-text>
+                  <ion-row>
+                    <p class="texto">Debes subir una foto del certificado de constancia de estudio o acta de pocesión.</p>
+                  </ion-row>
+                  <ion-row>
+                    <div class="ion-text-center">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12" *ngIf="previsualizacion">
+                          <img [src]="previsualizacion" alt="" id="foto">
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+                          <input (change)="capturarFoto($event)" type="file" id="boton2">
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+                          <ion-button type="button" [disabled]="loading" (click)="subirFoto()" color="primary" class="ion-margin-top" id="boton">
+                            {{(loading) ? 'Cargando...' : 'Actualizar'}}
+                          </ion-button>
+                        </div>
+                      </div>
+                    </div>
+                  </ion-row>
+                </ion-card-content>
+            </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>

@@ -1,0 +1,53 @@
+<ion-toolbar color="light">
+  <ion-row>
+    <ion-col size="2">
+      <ion-buttons>
+        <ion-menu-button color="dark" menu="first"></ion-menu-button>
+          <ion-button routerLink="/perfilaprendiz" expand="block" fill="clear" shape="round" color="dark">
+          <h5>{{this.nombre}}</h5>
+        </ion-button>
+        <img [src]="this.url" class="lafoto">
+      </ion-buttons>
+    </ion-col>
+    <ion-col size="9">
+    </ion-col>
+    <ion-col size="1">
+      <button class="salida" (click)="salir()">
+        <ion-icon name="log-out-outline" color="dark"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-toolbar>
+
+
+  <ion-content class="fondo">
+    <ion-grid>
+      <ion-row >
+        <ion-col sizeMd="4" offsetMd="4">
+          <ion-card id="lacarta">
+            <ion-card-content >
+              <!--Aqui va la imagen-->
+
+              <ion-row>
+                <div class="ion-text-center">
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12" *ngIf="previsualizacion">
+                      <img [src]="previsualizacion" alt="" id="foto">
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                      <input (change)="capturarFoto($event)" type="file" id="boton2">
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                      <ion-button type="button" [disabled]="loading" (click)="subirFoto()" color="primary" class="ion-margin-top" id="boton">
+                        {{(loading) ? 'Cargando...' : 'Actualizar'}}
+                      </ion-button>
+                    </div>
+                  </div>
+                </div>
+              </ion-row>
+            </ion-card-content>
+        </ion-card>
+         </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>

@@ -1,0 +1,75 @@
+<ion-toolbar color="light">
+  <ion-row>
+    <ion-col size="2">
+      <ion-buttons>
+        <ion-menu-button color="dark" menu="first"></ion-menu-button>
+        <ion-button routerLink="/perfilgestor" expand="block" fill="clear" shape="round" color="dark">
+          <h5>{{this.nombre}}</h5>
+        </ion-button>
+        <img [src]="this.url" class="lafoto">
+      </ion-buttons>
+    </ion-col>
+    <ion-col size="9">
+    </ion-col>
+    <ion-col size="1">
+      <button class="salida" (click)="salir()">
+        <ion-icon name="log-out-outline" color="dark"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-toolbar>
+
+
+<ion-content class="fondo">
+  <ion-grid>
+    <ion-card class="lacard">
+      <ion-row>
+
+        <ion-col size-md="4" size="12">
+
+          <img [src]="this.url" class="lafoto2"  id="foto">
+          <p class="ion-text-end">
+            <a [routerLink]="['/actufotogestor']">Cambiar Foto de Perfil</a>
+          </p>
+          <p class="ion-text-end">
+            <a [routerLink]="['/actufoto']">Actualizar Certificado</a>
+          </p>
+
+        </ion-col>
+        <ion-col size-md="8" size="12">
+          <ion-item class="ion-margin-vertical">
+            <ion-label position="floating"><ion-icon name="person-circle-outline" color="primary"></ion-icon> Nombre:</ion-label>
+            <h5>{{this.nombre}}</h5>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating"> <ion-icon name="mail-outline" color="primary"></ion-icon> Correo:</ion-label>
+            <h5>{{this.correo}}</h5>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating"><ion-icon name="call-outline" color="primary"></ion-icon> Telefono:</ion-label>
+            <h5>{{this.telefono}}</h5>
+          </ion-item>
+
+          <ion-item class="ion-margin-vertical">
+            <ion-label position="floating"><ion-icon name="document-text-outline" color="primary" ></ion-icon> Documento:</ion-label>
+            <h5>{{this.documento}}</h5>
+          </ion-item>
+
+          <ion-item class="ion-margin-vertical">
+            <ion-label position="floating"><ion-icon name="layers-outline" color="primary"></ion-icon>  Rol:</ion-label>
+            <h5>{{this.role}}</h5>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <p class="ion-text-end">
+            <a [routerLink]="['/forgot-password']">Cambiar Contraseña</a>
+          </p>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </ion-grid>
+</ion-content>

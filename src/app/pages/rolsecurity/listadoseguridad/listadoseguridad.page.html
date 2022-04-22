@@ -1,0 +1,42 @@
+<ion-toolbar color="light">
+  <ion-row>
+    <ion-col size="2">
+      <ion-buttons>
+        <ion-menu-button color="dark" menu="first"></ion-menu-button>
+          <ion-button routerLink="/perfilseguridad" expand="block" fill="clear" shape="round" color="dark">
+          <h5>{{this.nombre}}</h5>
+        </ion-button>
+        <img [src]="this.url" class="lafoto">
+      </ion-buttons>
+    </ion-col>
+    <ion-col size="9">
+    </ion-col>
+    <ion-col size="1">
+      <button class="salida" (click)="salir()">
+        <ion-icon name="log-out-outline" color="dark"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-toolbar>
+
+<ion-content class="fondo">
+<div style="margin: 30px;">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name </th>
+        <th scope="col">Entrada</th>
+        <th scope="col">Salida</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of salida">
+        <td>{{usuario.name}}</td>
+        <td>{{usuario.createdAt|date:"short"}}</td>
+        <td>{{usuario.regEnt[0].createdAt|date:"short"}}</td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+</ion-content>

@@ -1,0 +1,29 @@
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto 1em;
+  
+    ion-button {
+      margin-top: 1em;
+    }
+  }
+  
+  .extra-options {
+    display: block;
+    margin-top: 1em;
+  }
+  
+  .form-error {
+    font-size: 0.5em;
+  }
+
+.form-submitted input.ng-invalid,
+.form-submitted select.ng-invalid {
+  border-color: #dc3545;
+}
+.lacard{
+  border-radius: 1rem;
+  filter: drop-shadow(3px 3px 3px #444);
+  margin-top: 50px;
+}

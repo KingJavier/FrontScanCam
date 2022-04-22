@@ -1,0 +1,81 @@
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+<ion-content class="fondo">
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeMd="4" offsetMd="4">
+          <ion-card class="lacard">
+            <ion-text color="primary" class="titulos">
+              <h1>REGISTRO</h1>
+              </ion-text>
+
+              <ion-card-content >
+                <form [formGroup]="form" errorTailor>
+                  <ion-item class="form-group">
+                    <ion-label position="floating">Documento:</ion-label>
+                    <ion-input class="form-control" formControlName="doc" type="number" placeholder="Documento" name="documento" [(ngModel)]="datos.documento"></ion-input>
+                  </ion-item>
+
+                  <ion-item class="form-group">
+                    <ion-label position="floating">Nombre:</ion-label>
+                    <ion-input class="form-control" formControlName="name" type="text" placeholder="Nombre" name="nombre" [(ngModel)]="datos.nombre"></ion-input>
+                  </ion-item>
+
+                  <ion-item class="form-group">
+                    <ion-label position="floating">Apellido:</ion-label>
+                    <ion-input class="form-control" formControlName="lastname" type="text" placeholder="Apellido" name="apellido" [(ngModel)]="datos.apellido" ></ion-input>
+                  </ion-item>
+
+                  <ion-item class="form-group">
+                    <ion-label>Rol:</ion-label>
+                    <ion-select formControlName="rol" class="form-control" name="role" [(ngModel)]="datos.role">
+                      <ion-select-option Value="invitado">Invitado</ion-select-option>
+                      <ion-select-option Value="aprendiz">Aprendiz</ion-select-option>
+                      <ion-select-option Value="funcionario">Funcionario</ion-select-option>
+                    </ion-select>
+                  </ion-item>
+
+                  <ion-item class="form-group">
+                    <ion-label position="floating">Telefono:</ion-label>
+                    <ion-input class="form-control" formControlName="phone" type="number" placeholder="Telefono" name="telefono" [(ngModel)]="datos.telefono" ></ion-input>
+                  </ion-item>
+
+                  <ion-item class="form-group">
+                    <ion-label position="floating">Correo:</ion-label>
+                    <ion-input class="form-control" formControlName="correo" type="email" placeholder="Correo" name="email" [(ngModel)]="datos.email" ></ion-input>
+                  </ion-item>
+
+                  <ion-item class="form-group">
+                    <ion-label position="floating">Contraseña:</ion-label>
+                    <ion-input class="form-control" formControlName="contraseña" type="password" placeholder="Contraseña" name="password" [(ngModel)]="datos.password" ></ion-input>
+                  </ion-item>
+
+                  <ion-row>
+                    <h4>La Contraseña debe contener un carater en mayuscula, un numero, un carater especial y debe ser de 8 carateres.</h4>
+                  </ion-row>
+
+                  <ion-item class="form-group">
+                    <ion-label position="floating">Confirmar contraseña:</ion-label>
+                    <ion-input class="form-control" formControlName="confirmarcontraseña"  type="password" placeholder="Confirmar contraseña" ></ion-input>
+                  </ion-item>
+
+                </form>
+
+                <div class="ion-text-center">
+                  <ion-button color="primary"  expand="block" class="ion-margin-top"  mode="ios" (click)="registrar()">
+                    Registrarse
+                  </ion-button>
+                </div>
+                <ion-button fill="clear" routerLink="/login" expand="block">
+                  ¿Ya tienes cuenta?
+                </ion-button>
+              </ion-card-content>
+          </ion-card>
+       </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

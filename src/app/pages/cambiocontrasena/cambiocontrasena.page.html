@@ -1,0 +1,34 @@
+<ion-toolbar color="light">
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="/login"></ion-back-button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-content class="fondo">
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+        <ion-card class="lacard">
+          <form [formGroup]="form" errorTailor >
+
+            <ion-item class="form-group">
+              <ion-label position="floating">Codigo</ion-label>
+              <ion-input class="form-control" formControlName="codigo" #codigo errorTailor ></ion-input>
+            </ion-item>
+            <ion-item class="form-group">
+              <ion-label position="floating">Nueva contraseña</ion-label>
+              <ion-input class="form-control" formControlName="codigo" #contrasena errorTailor ></ion-input>
+            </ion-item>
+
+            <ion-button color="primary" (click)="actucontrasena(codigo.value, contrasena.value)">Cambiar Contreseña</ion-button>
+
+          </form>
+        </ion-card>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+</ion-content>
