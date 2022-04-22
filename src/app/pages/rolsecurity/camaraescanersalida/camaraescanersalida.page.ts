@@ -45,7 +45,7 @@ export class CamaraescanersalidaPage implements OnInit {
 
   salir(){
     //función de cerrar seción
-    localStorage.removeItem('token');
+    localStorage.clear();
     this.router.navigate(['login']);
   }
 

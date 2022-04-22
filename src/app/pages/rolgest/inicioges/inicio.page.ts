@@ -12,7 +12,6 @@ import { TaskService } from 'src/app/services/task.service';
 export class InicioPage implements OnInit {
   //llamdo de los datos url y name como dato tipo string
   url: string;
-
   nombre: string;
 
   constructor(private router: Router, private usuarioServicio: TaskService) {
@@ -27,7 +26,7 @@ export class InicioPage implements OnInit {
 
   salir(){
     //función de cerrar seción
-    localStorage.removeItem('token');
+    localStorage.clear();
     this.router.navigate(['login']);
   }
 

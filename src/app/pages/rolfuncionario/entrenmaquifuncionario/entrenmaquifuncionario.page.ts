@@ -18,7 +18,6 @@ import { UserPhoto } from './../../../interfaces/task';
 export class EntrenmaquifuncionarioPage implements OnInit {
   //llamdo de los datos url y name como datos string
   url: string;
-
   nombre: string;
 
   //? Matriz que contendra uan referencia a cada foto.
@@ -36,7 +35,7 @@ export class EntrenmaquifuncionarioPage implements OnInit {
 
   salir(){
     //función de cerrarseción
-    localStorage.removeItem('token');
+    localStorage.clear();
     this.router.navigate(['login']);
   }
 

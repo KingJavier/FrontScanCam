@@ -113,4 +113,14 @@ export class TaskService {
   enviarfototempsal(token, body){
     return this.http.post(`https://apiscancam01.herokuapp.com/api/fototempsal/`, body, {headers:{authorization: `${token}`}});
   }
+
+  //? Metodo para traer numeor de registros de entrada
+  numregentrada(token){
+    return this.http.get(`https://apiscancam01.herokuapp.com/api/registro/numeroregistros`, {headers:{authorization: `${token}`}});
+  }
+
+  //? Metodo para traer numeor de registros de salida
+  numregsalida(token){
+    return this.http.get(`https://apiscancam01.herokuapp.com/api/regsalida/numeroregistros`, {headers:{authorization: `${token}`}});
+  }
 }

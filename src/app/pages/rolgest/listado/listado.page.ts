@@ -12,9 +12,7 @@ import { TaskService } from 'src/app/services/task.service';
 export class ListadoPage implements OnInit {
   //llamdo de los datos url y name como dato tipo string
   url: string;
-
   nombre: string;
-
   usuarios: any;
 
   constructor(
@@ -29,7 +27,7 @@ export class ListadoPage implements OnInit {
 
   ngOnInit() {
      //llamdo de la foto
-     this.traerfotol();
+    this.traerfotol();
     //llamdo del token del localstorage
     const token=localStorage.getItem('token');
     this.usuarioservicio.listadogest(token).subscribe((res: any)=>{console.log(res);
@@ -68,7 +66,7 @@ export class ListadoPage implements OnInit {
 
   salir(){
     //función de cerrar seción
-    localStorage.removeItem('token');
+    localStorage.clear();
     this.router.navigate(['login']);
   }
 

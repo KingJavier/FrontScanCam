@@ -23,7 +23,7 @@ export class EscanearqrPage implements OnInit {
   ) {
     //llamdo del nombre del localstorage
     this.nombre=localStorage.getItem('name');
-   }
+  }
 
   ngOnInit() {
     //llamdo de la foto
@@ -33,13 +33,13 @@ export class EscanearqrPage implements OnInit {
   escanearqr() {
     this.barcodeScanner.scan().then(barcodeData => {
       console.log('Barcode data', barcodeData);
-     }).catch(err => {
-         console.log('Error', err);
-     });
+    }).catch(err => {
+        console.log('Error', err);
+    });
   }
 
   salir(){
-    localStorage.removeItem('token');
+    localStorage.clear();
     this.router.navigate(['login']);
   }
 

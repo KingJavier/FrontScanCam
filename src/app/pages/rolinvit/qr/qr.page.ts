@@ -66,7 +66,7 @@ export class QrPage implements OnInit {
   }
 
   salir(){
-    localStorage.removeItem('token');
+    localStorage.clear();
     this.router.navigate(['login']);
   }
 

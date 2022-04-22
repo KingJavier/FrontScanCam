@@ -35,7 +35,7 @@ export class PerfilseguridadPage implements OnInit {
 
   salir(){
     //función de cerrado de seción
-    localStorage.removeItem('token');
+    localStorage.clear();
     this.router.navigate(['login']);
   }
 

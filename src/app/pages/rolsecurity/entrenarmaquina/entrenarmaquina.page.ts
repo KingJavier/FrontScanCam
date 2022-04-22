@@ -36,7 +36,7 @@ export class EntrenarmaquinaPage implements OnInit {
 
   salir(){
     //función de cerrarseción
-    localStorage.removeItem('token');
+    localStorage.clear();
     this.router.navigate(['login']);
   }
 

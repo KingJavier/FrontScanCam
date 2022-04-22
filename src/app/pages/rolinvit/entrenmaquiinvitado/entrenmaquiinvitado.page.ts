@@ -37,7 +37,7 @@ export class EntrenmaquiinvitadoPage implements OnInit {
 
   salir(){
     //función de cerrarseción
-    localStorage.removeItem('token');
+    localStorage.clear();
     this.router.navigate(['login']);
   }
 

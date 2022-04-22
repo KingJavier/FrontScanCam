@@ -15,7 +15,6 @@ import { TaskService } from 'src/app/services/task.service';
 export class ActufotoaprendizPage implements OnInit {
   //llamdo de los datos url y name en tipo string
   url: string;
-
   nombre: string;
 
   //previsualización de la imagen en la vista
@@ -46,7 +45,7 @@ export class ActufotoaprendizPage implements OnInit {
 
   salir(){
     //función de cerrar seción
-    localStorage.removeItem('token');
+    localStorage.clear();
     this.router.navigate(['login']);
   }
 

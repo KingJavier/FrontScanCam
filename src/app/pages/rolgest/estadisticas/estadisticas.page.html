@@ -19,29 +19,10 @@
   </ion-row>
 </ion-toolbar>
 
-<!-- <ion-content class="fondo">
-  <ion-grid fixed>
-    <ion-row>
-      <ion-col size="6">
-        <ion-card class="lacard">
-          <div>
-            <div>
-              <div style="display: block">
-                <canvas baseChart
-                  [data]="barChartData"
-                  [options]="barChartOptions"
-                  [plugins]="barChartPlugins"
-                  [type]="barChartType"
-                  (chartHover)="chartHovered($event)"
-                  (chartClick)="chartClicked($event)">
-                </canvas>
-              </div>
-              <button mat-button mat-raised-button color="primary" (click)="randomize()">Update</button>
-            </div>
-          </div>
-        </ion-card>
-      </ion-col>
-
-    </ion-row>
-  </ion-grid>
-</ion-content> -->
+<ion-content class="fondo">
+  <ion-row>
+    <ion-col size="12" class="chart-container">
+      <canvas id="estadistica"></canvas>
+    </ion-col>
+  </ion-row>
+</ion-content> 
