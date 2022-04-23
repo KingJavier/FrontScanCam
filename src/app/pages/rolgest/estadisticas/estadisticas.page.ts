@@ -37,17 +37,18 @@ export class EstadisticasPage implements OnInit {
 
     console.log('Token -->',token);
 
-    this.usuarioServicio.numregentrada(token).subscribe((res: any)=>{
-      console.log(res.data);
-      this.entrada = res.data;
-    });
+    this.usuarioServicio.numregentrada(token).subscribe((resp: any)=>{
+      console.log(resp.data);
+      this.entrada = +resp.data;
 
-    this.usuarioServicio.numregsalida(token).subscribe((res: any)=>{
-      console.log(res.data);
-      const hola = res.data;
-    });
 
-    this.estadisticas(5,10);
+      this.usuarioServicio.numregsalida(token).subscribe((res: any)=>{
+        console.log(res.data);
+        this.salida = +res.data;
+
+        this.estadisticas(this.entrada, this.salida);
+      });
+    });
   }
 
   async estadisticas(entrada: number, salida: number){

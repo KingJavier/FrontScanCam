@@ -18,7 +18,7 @@ export class CheckRoleInvitadoGuard implements CanActivate {
     console.log('Esta veriable si la trae', role);
 
     // eslint-disable-next-line no-cond-assign
-    if (role !== 'inivitado') {
+    if (role !== 'invitado') {
       this.router.navigate(['home']);
       // Si devolvemos FALSE no de permitirá el acceso
       return false;

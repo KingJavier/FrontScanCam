@@ -153,8 +153,7 @@ const routes: Routes = [
   },
   {
     path: 'qr',
-    loadChildren: () => import('./pages/rolinvit/qr/qr.module').then( m => m.QrPageModule),
-    canActivate:[CheckRoleInvitadoGuard]
+    loadChildren: () => import('./pages/rolinvit/qr/qr.module').then( m => m.QrPageModule)
   },
   {
     path: 'cambiocontrasena',
