@@ -122,11 +122,6 @@ const routes: Routes = [
     canActivate:[CheckRoleGuard]
   },
   {
-    path: 'escanearqr',
-    loadChildren: () => import('./pages/rolsecurity/escanearqr/escanearqr.module').then( m => m.EscanearqrPageModule),
-
-  },
-  {
     path: 'listadoseguridad',
     loadChildren: () => import('./pages/rolsecurity/listadoseguridad/listadoseguridad.module').then( m => m.ListadoseguridadPageModule),
     canActivate:[CheckRoleGuard]
@@ -152,10 +147,6 @@ const routes: Routes = [
     canActivate:[CheckRoleInvitadoGuard]
   },
   {
-    path: 'qr',
-    loadChildren: () => import('./pages/rolinvit/qr/qr.module').then( m => m.QrPageModule)
-  },
-  {
     path: 'cambiocontrasena',
     loadChildren: () => import('./pages/cambiocontrasena/cambiocontrasena.module').then( m => m.CambiocontrasenaPageModule)
   },
@@ -178,7 +169,11 @@ const routes: Routes = [
     path: 'camaraescanersalida',
     loadChildren: () => import('./pages/rolsecurity/camaraescanersalida/camaraescanersalida.module').then( m => m.CamaraescanersalidaPageModule),
     canActivate:[CheckRoleGuard]
+  },  {
+    path: 'base-excel',
+    loadChildren: () => import('./pages/rolgest/base-excel/base-excel.module').then( m => m.BaseExcelPageModule)
   },
+
 
 
 ];

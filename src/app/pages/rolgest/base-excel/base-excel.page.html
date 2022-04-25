@@ -30,9 +30,6 @@
               <ion-row>
                 <div class="ion-text-center">
                   <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12" *ngIf="previsualizacion">
-                      <img [src]="previsualizacion" alt="" id="foto">
-                    </div>
                     <div class="col-lg-4 col-md-4 col-sm-12">
                       <input (change)="capturarFoto($event)" type="file" id="boton2">
                     </div>
@@ -50,3 +47,4 @@
       </ion-row>
     </ion-grid>
   </ion-content>
+

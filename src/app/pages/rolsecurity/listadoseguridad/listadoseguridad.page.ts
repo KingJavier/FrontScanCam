@@ -33,13 +33,13 @@ export class ListadoseguridadPage implements OnInit {
     // });
     this.resentrada.listadoentrada(token).subscribe((res: any)=>{
       console.log(res);
-      this.salida=res.data;
+      this.entrada=res.data;
     });
   }
 
   salir(){
     //función de cerrar seción
-    localStorage.clear();
+    localStorage.removeItem('token');
     this.router.navigate(['login']);
   }
 

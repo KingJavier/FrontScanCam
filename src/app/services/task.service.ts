@@ -44,7 +44,7 @@ export class TaskService {
     return this.http.put<Olvido>(path, olvido);
   }
 
-//llamdo del metodo crear foto
+  //llamdo del metodo crear foto
   createsFoto(token, foto: any) {
     const path = '';
     return this.http.post('https://apiscancam01.herokuapp.com/api/perfil', foto, {headers:{authorization: `${token}`}});
@@ -122,5 +122,10 @@ export class TaskService {
   //? Metodo para traer numeor de registros de salida
   numregsalida(token){
     return this.http.get(`https://apiscancam01.herokuapp.com/api/regsalida/numeroregistros`, {headers:{authorization: `${token}`}});
+  }
+
+  //?llamdo del metodo crear foto
+  enviarexcel(token, excel: any) {
+    return this.http.post('https://apiscancam01.herokuapp.com/api/auth/excel', excel, {headers:{authorization: `${token}`}});
   }
 }

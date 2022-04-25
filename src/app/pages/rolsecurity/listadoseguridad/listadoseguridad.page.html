@@ -19,7 +19,7 @@
   </ion-row>
 </ion-toolbar>
 
-<ion-content class="fondo">
+<ion-content>
 <div style="margin: 30px;">
   <table class="table">
     <thead>
@@ -30,10 +30,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let usuario of salida">
+      <tr *ngFor="let usuario of entrada">
         <td>{{usuario.name}}</td>
-        <td>{{usuario.createdAt|date:"short"}}</td>
-        <td>{{usuario.regEnt[0].createdAt|date:"short"}}</td>
+        <td *ngIf="usuario.createdAt">{{usuario.createdAt|date:"short"}}</td>
+        <td *ngIf="usuario.regEnt.length > 0">{{usuario.regEnt[0].createdAt|date:"short"}}</td>
 
       </tr>
     </tbody>

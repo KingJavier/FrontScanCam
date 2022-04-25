@@ -57,7 +57,6 @@ export class RegisterPage implements OnInit {
       name: [null, Validators.required],
       lastname: [null, Validators.required],
       phone: [null, Validators.required],
-      rol: [null, Validators.required],
       correo: [null,[Validators.required, Validators.pattern('[A-Za-z0-9._%+-]{2,}@[a-zA-Z-_.]{2,}[.]{1}[a-zA-Z]{2,}')]],
       contraseña: [null, Validators.required],
       confirmarcontraseña: [null, Validators.required],

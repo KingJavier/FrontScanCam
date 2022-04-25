@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { EscanearqrPageRoutingModule } from './escanearqr-routing.module';
+import { BaseExcelPageRoutingModule } from './base-excel-routing.module';
 
-import { EscanearqrPage } from './escanearqr.page';
+import { BaseExcelPage } from './base-excel.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    EscanearqrPageRoutingModule
+    BaseExcelPageRoutingModule
   ],
-  declarations: [EscanearqrPage]
+  declarations: [BaseExcelPage]
 })
-export class EscanearqrPageModule {}
+export class BaseExcelPageModule {}

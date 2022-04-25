@@ -108,7 +108,7 @@ export class CamaraescanersalidaPage implements OnInit {
 
     const token = localStorage.getItem('token');
 
-    this.foto.enviarfototemp(token, base64).subscribe((res: any) => {
+    this.foto.enviarfototempsal(token, base64).subscribe((res: any) => {
       console.log(res);
 
       this.name = res.dataUser.name;
